@@ -16,6 +16,13 @@ public class UserServiceImpl implements UserService {
     @Resource
     private FeginClientIface feginClientIface;
 
+    /**
+     * 熔断
+     * @param age1
+     * @param age2
+     * @return
+     * @throws Exception
+     */
     @Override
     @HystrixCommand(fallbackMethod ="fallback")
     public int add(int age1, int age2) throws Exception {
