@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
  * @date 2017/8/15
  */
 //注意value=服务提供方配置文件的spring.application.name
-@FeignClient(value = "eureka.server.provider")
+@FeignClient(value = "spring-eureka-server-provider")
 public interface FeginClientIface {
 
     @GetMapping(value = "/eureka/testAdd/{id}")
