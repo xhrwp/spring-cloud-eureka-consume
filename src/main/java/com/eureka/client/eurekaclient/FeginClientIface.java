@@ -13,6 +13,17 @@ import org.springframework.web.bind.annotation.*;
  * Feign可以与Eureka和Ribbon组合使用以支持负载均衡。
  * Ribbon是一个客户端的负载均衡器，可以提供很多HTTP和TCP的控制行为。Feign已经使用了Ribbon，所以使用了@FeignClient，Riboon也同样被应用了。
  * 如果使用resttemplate 需要单独写@LoadBalanced 对restemplate进行bean注入
+ *
+     * @Bean
+     @LoadBalanced
+     RestTemplate restTemplate() {
+        return new RestTemplate();
+     }
+
+     @Bean
+     public IRule ribbonRule() {
+        return new RandomRule();//这里配置策略，和配置文件对应
+     }
  * @author 许洪荣
  * @date 2017/8/15
  */
