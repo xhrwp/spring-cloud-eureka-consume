@@ -9,6 +9,8 @@ RoundRobinRule	public class RoundRobinRule extends AbstractLoadBalancerRule	roun
 RandomRule	public class RandomRule extends AbstractLoadBalancerRule	随机选择一个server	在index上随机，选择index对应位置的server
 ZoneAvoidanceRule	public class ZoneAvoidanceRule extends PredicateBasedRule	复合判断server所在区域的性能和server的可用性选择server	使用ZoneAvoidancePredicate和AvailabilityPredicate来判断是否选择某个server，前一个判断判定一个zone的运行性能是否可用，剔除不可用的zone（的所有server），AvailabilityPredicate用于过滤掉连接数过多的Server。
 
+默认 是  AvailabilityFilteringRule
+
     @Bean
     @LoadBalanced
     RestTemplate restTemplate() {
