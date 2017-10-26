@@ -2,6 +2,7 @@ package com.eureka.client.eurekaclient;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -14,6 +15,7 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
     /**
      * 测试段容器和feign
      * @param age1

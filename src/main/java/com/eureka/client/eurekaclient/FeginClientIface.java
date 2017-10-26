@@ -4,12 +4,15 @@ import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
 /**
+ *
  * Feign是一个声明式Web Service客户端。
  * 使用Feign能让编写Web Service客户端更加简单,
  * 它的使用方法是定义一个接口，然后在上面添加注解，同时也支持JAX-RS标准的注解。
  * Feign也支持可拔插式的编码器和解码器。
  * Spring Cloud对Feign进行了封装，使其支持了Spring MVC标准注解和HttpMessageConverters。
  * Feign可以与Eureka和Ribbon组合使用以支持负载均衡。
+ * Ribbon是一个客户端的负载均衡器，可以提供很多HTTP和TCP的控制行为。Feign已经使用了Ribbon，所以使用了@FeignClient，Riboon也同样被应用了。
+ * 如果使用resttemplate 需要单独写@LoadBalanced 对restemplate进行bean注入
  * @author 许洪荣
  * @date 2017/8/15
  */
